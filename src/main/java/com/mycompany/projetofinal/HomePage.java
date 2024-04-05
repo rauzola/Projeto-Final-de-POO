@@ -6,10 +6,11 @@ package com.mycompany.projetofinal;
 
 import java.awt.Dimension;
 import javax.swing.JDialog;
+import javax.swing.JFrame;
 
 /**
  *
- * @author Laboratorio
+ * @author Raul Sigoli
  */
 public class HomePage extends javax.swing.JFrame {
 
@@ -30,6 +31,7 @@ public class HomePage extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
@@ -39,15 +41,23 @@ public class HomePage extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jLabel1.setText("Home");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 388, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(88, 88, 88)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(263, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 265, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(122, 122, 122)
+                .addComponent(jLabel1)
+                .addContainerGap(127, Short.MAX_VALUE))
         );
 
         jMenu1.setText("Arquivo");
@@ -111,29 +121,26 @@ public class HomePage extends javax.swing.JFrame {
     }//GEN-LAST:event_OnCliciSair
 
     private void OnCliciListar(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OnCliciListar
-        // TODO add your handling code here:
-        JDialog dialog = new JDialog(new FormListaContato(), true);
-        
-        // define o titulo do formulario
-        dialog.setTitle("Lista de Contatos");
-        
-        // define o tamanho do formulario
-        dialog.setSize(new Dimension(400,400));
-        
-        // apresenta o form no centro da tela
-        dialog.setLocationRelativeTo(null);
-        
-        
+        FormListaContato form = new FormListaContato();
+        form.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        form.setVisible(true);
+
+        // fecha apos aperta no button
+        dispose();
+
         System.out.print("cliclou na Lista de Contatos \n");
 
-        
-        dialog.setVisible(true);
     }//GEN-LAST:event_OnCliciListar
 
     private void OnCliciNovo(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OnCliciNovo
         // TODO add your handling code here:
-        System.out.print("cliclou no novo \n");
+        FormDadosContato form = new FormDadosContato();
+        form.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        form.setVisible(true);
 
+        System.out.print("cliclou no novo \n");
+        // fecha apos aperta no button
+        dispose();
     }//GEN-LAST:event_OnCliciNovo
 
     /**
@@ -172,6 +179,7 @@ public class HomePage extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
